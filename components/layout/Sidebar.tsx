@@ -1,6 +1,6 @@
 const Sidebar = () => {
   return (
-    <aside className="w-full max-w-[320px] h-[20%] shrink-0 overflow-y-auto bg-sidebar/50 text-sidebar-foreground absolute left-2 top-2">
+    <aside className="pointer-events-auto absolute left-2 top-2 z-[1000] h-[20%] w-full max-w-[320px] overflow-y-auto bg-sidebar/95 text-sidebar-foreground shadow-md backdrop-blur-sm">
       {/* Sidebar / search */}
     </aside>
   );

@@ -1,9 +1,7 @@
+import FullMap from "@/features/maps/FullMap";
+
 const HomePage = () => {
-  return (
-    <div>
-      <h1>HomePage</h1>
-    </div>
-  );
+  return <FullMap />;
 };
 
 export default HomePage;

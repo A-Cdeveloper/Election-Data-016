@@ -218,3 +218,48 @@ aside::-webkit-scrollbar-thumb {
 aside::-webkit-scrollbar-thumb:hover {
   background-color: oklch(0.285 0 0);
 }
+
+/* Leaflet — markers & clusters: --chart-5 */
+.election-map-marker {
+  color: var(--chart-5);
+  background: transparent;
+  border: none;
+  filter: drop-shadow(0 2px 2px rgb(0 0 0 / 25%));
+}
+
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+
+.marker-cluster div {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 15px;
+  font:
+    12px "Helvetica Neue",
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+.marker-cluster span {
+  line-height: 30px;
+}
+
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-color: color-mix(in srgb, var(--chart-5) 35%, transparent);
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background-color: var(--chart-5);
+  color: #ffffff;
+  font-weight: 600;
+}

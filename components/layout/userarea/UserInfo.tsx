@@ -18,7 +18,6 @@ const UserInfo = ({ name, email }: UserProps) => {
             .toUpperCase()}
         </AvatarFallback>
       </Avatar>
-      <p className="text-sm font-medium uppercase">{name}</p>
     </div>
   );
 };
