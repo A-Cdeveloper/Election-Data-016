@@ -26,7 +26,7 @@ model Place {
   @@map("places")
 }
 
-/// Šifarnik vrsta incidenata (RIK / data/incidents.json)
+
 model IncidentType {
   code      String     @id @db.VarChar(4)
   name      String     @db.VarChar(512)
