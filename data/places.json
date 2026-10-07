@@ -1,0 +1,466 @@
+[
+  {
+    "number": 1,
+    "object": "POSLOVNA PROSTORIJA VLADIMIRA FILIPOVIĆA",
+    "address": "29. NOVEMBRA BR. 17",
+    "registeredVoters": 693,
+    "latitude": 42.96345,
+    "longitude": 22.12661
+  },
+  {
+    "number": 2,
+    "object": "POSLOVNA PROSTORIJA CONIĆ IVANE",
+    "address": "29. NOVEMBRA BR. 27",
+    "registeredVoters": 631,
+    "latitude": 42.96322,
+    "longitude": 22.12702
+  },
+  {
+    "number": 3,
+    "object": "PU \"MILKA DIMANIĆ\"",
+    "address": "12. BRIGADE BB",
+    "registeredVoters": 921,
+    "latitude": 42.96467,
+    "longitude": 22.12484
+  },
+  {
+    "number": 4,
+    "object": "MELA ROSA",
+    "address": "12 BRIGADE BR.49",
+    "registeredVoters": 644,
+    "latitude": 42.96389,
+    "longitude": 22.12403
+  },
+  {
+    "number": 5,
+    "object": "OŠ \"OSMI OKTOBAR\"",
+    "address": "MARKA OREŠKOVIĆA BR. 2",
+    "registeredVoters": 795,
+    "latitude": 42.96531,
+    "longitude": 22.12197
+  },
+  {
+    "number": 6,
+    "object": "ZGRADA SKUPŠTINE OPŠTINE - MALA SALA",
+    "address": "TRG OSLOBOĐENJA BR. 12",
+    "registeredVoters": 355,
+    "latitude": 42.96425,
+    "longitude": 22.12706
+  },
+  {
+    "number": 7,
+    "object": "ZGRADA SKUPŠTINE OPŠTINE - VELIKA SALA",
+    "address": "TRG OSLOBOĐENJA BR. 12",
+    "registeredVoters": 624,
+    "latitude": 42.96425,
+    "longitude": 22.12706
+  },
+  {
+    "number": 8,
+    "object": "OŠ \"SINiŠA JANIĆ\"",
+    "address": "IVE LOLE RIBARA BB",
+    "registeredVoters": 404,
+    "latitude": 42.96202,
+    "longitude": 22.12847
+  },
+  {
+    "number": 9,
+    "object": "OŠ \"SINiŠA JANIĆ\"",
+    "address": "IVE LOLE RIBARA BB",
+    "registeredVoters": 402,
+    "latitude": 42.96202,
+    "longitude": 22.12847
+  },
+  {
+    "number": 10,
+    "object": "OŠ \"OSMI OKTOBAR\"",
+    "address": "MARKA OREŠKOVIĆA BR.2",
+    "registeredVoters": 615,
+    "latitude": 42.96531,
+    "longitude": 22.12197
+  },
+  {
+    "number": 11,
+    "object": "ROJAL KAFANA",
+    "address": "VINOGRADARSKA BB",
+    "registeredVoters": 921,
+    "latitude": 42.96712,
+    "longitude": 22.12962
+  },
+  {
+    "number": 12,
+    "object": "POSLOVNA PROSTORIJA PRAVOSLAVA POP-ILIĆA",
+    "address": "MIJE MILENKOVIĆA BR. 8",
+    "registeredVoters": 1508,
+    "latitude": 42.96574,
+    "longitude": 22.12481
+  },
+  {
+    "number": 13,
+    "object": "PU \"MILKA DIMANIĆ\"",
+    "address": "BORE STANKOVIĆA BB",
+    "registeredVoters": 1207,
+    "latitude": 42.96603,
+    "longitude": 22.13038
+  },
+  {
+    "number": 14,
+    "object": "GALERIJA KULTURNOG CENTRA",
+    "address": "NEŠIĆEV KEJ",
+    "registeredVoters": 709,
+    "latitude": 42.96495,
+    "longitude": 22.12749
+  },
+  {
+    "number": 15,
+    "object": "POSLOVNA PROSTORIJA MILOŠA MILENKOVIĆA",
+    "address": "22. DIVIZIJE BR. 91",
+    "registeredVoters": 1009,
+    "latitude": 42.95995,
+    "longitude": 22.13058
+  },
+  {
+    "number": 16,
+    "object": "POSLOVNA PROSTORIJA DRAGANA IGNJATOVIĆA",
+    "address": "22. DIVIZIJE BR. 201",
+    "registeredVoters": 934,
+    "latitude": 42.95583,
+    "longitude": 22.13729
+  },
+  {
+    "number": 17,
+    "object": "POSLOVNA PROSTORIJA DRAGANE STANKOVIĆ",
+    "address": "MANASTIRIŠTE BB",
+    "registeredVoters": 580,
+    "latitude": 42.94963,
+    "longitude": 22.14102
+  },
+  {
+    "number": 18,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "BREZOVICA",
+    "registeredVoters": 82,
+    "latitude": 42.92792,
+    "longitude": 22.10582
+  },
+  {
+    "number": 19,
+    "object": "MESNA ZAJEDNICA",
+    "address": "ŠIŠAVA",
+    "registeredVoters": 818,
+    "latitude": 42.98242,
+    "longitude": 22.11366
+  },
+  {
+    "number": 20,
+    "object": "OŠ \"BRAĆA MILENKOVIĆ\"",
+    "address": "DONJA LOMNICA",
+    "registeredVoters": 414,
+    "latitude": 42.99762,
+    "longitude": 22.10342
+  },
+  {
+    "number": 21,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "CRNA BARA",
+    "registeredVoters": 129,
+    "latitude": 42.97928,
+    "longitude": 22.07931
+  },
+  {
+    "number": 22,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "SREDOR",
+    "registeredVoters": 139,
+    "latitude": 42.96363,
+    "longitude": 22.06471
+  },
+  {
+    "number": 23,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "SKRAPEŽ",
+    "registeredVoters": 106,
+    "latitude": 42.94251,
+    "longitude": 22.07824
+  },
+  {
+    "number": 24,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "LIPOVICA",
+    "registeredVoters": 217,
+    "latitude": 42.90082,
+    "longitude": 22.07721
+  },
+  {
+    "number": 25,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "KONOPNICA",
+    "registeredVoters": 718,
+    "latitude": 42.96173,
+    "longitude": 22.17147
+  },
+  {
+    "number": 26,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "STAJKOVCE",
+    "registeredVoters": 614,
+    "latitude": 42.97518,
+    "longitude": 22.17032
+  },
+  {
+    "number": 27,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "STAJKOVCE",
+    "registeredVoters": 603,
+    "latitude": 42.97476,
+    "longitude": 22.17091
+  },
+  {
+    "number": 28,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "BATULOVCE",
+    "registeredVoters": 611,
+    "latitude": 42.95484,
+    "longitude": 22.16543
+  },
+  {
+    "number": 29,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "PRILEPAC",
+    "registeredVoters": 338,
+    "latitude": 42.94816,
+    "longitude": 22.18854
+  },
+  {
+    "number": 30,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "GLOŽANE",
+    "registeredVoters": 491,
+    "latitude": 42.91617,
+    "longitude": 22.18123
+  },
+  {
+    "number": 31,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "LADOVICA",
+    "registeredVoters": 634,
+    "latitude": 42.94286,
+    "longitude": 22.21294
+  },
+  {
+    "number": 32,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "ORAŠJE",
+    "registeredVoters": 678,
+    "latitude": 42.92974,
+    "longitude": 22.22854
+  },
+  {
+    "number": 33,
+    "object": "ZGRADA STARE OPŠTINE",
+    "address": "KUKAVICA",
+    "registeredVoters": 358,
+    "latitude": 42.88747,
+    "longitude": 22.21096
+  },
+  {
+    "number": 34,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "JASTREBAC",
+    "registeredVoters": 282,
+    "latitude": 42.91382,
+    "longitude": 22.24087
+  },
+  {
+    "number": 35,
+    "object": "DOM KULTURE",
+    "address": "DADINCE",
+    "registeredVoters": 102,
+    "latitude": 42.89861,
+    "longitude": 22.26047
+  },
+  {
+    "number": 36,
+    "object": "POSLOVNA PROSTORIJA DINIĆ SRBE",
+    "address": "GRADIŠTE",
+    "registeredVoters": 114,
+    "latitude": 42.87937,
+    "longitude": 22.27714
+  },
+  {
+    "number": 37,
+    "object": "MESNA KANCELARIJA",
+    "address": "DONJA LOPUŠNJA",
+    "registeredVoters": 281,
+    "latitude": 42.84654,
+    "longitude": 22.24539
+  },
+  {
+    "number": 38,
+    "object": "POSLOVNA PROSTORIJA VLASTE ĐIKIĆA",
+    "address": "RAVNA GORA",
+    "registeredVoters": 66,
+    "latitude": 42.85992,
+    "longitude": 22.29417
+  },
+  {
+    "number": 39,
+    "object": "OŠ \"KARAĐORĐE PETROVIĆ\"",
+    "address": "KRUŠEVICA",
+    "registeredVoters": 164,
+    "latitude": 42.84478,
+    "longitude": 22.31056
+  },
+  {
+    "number": 40,
+    "object": "POSLOVNA PROSTORIJA DUŠANA MILJKOVIĆA",
+    "address": "KRUŠEVICA",
+    "registeredVoters": 86,
+    "latitude": 42.84396,
+    "longitude": 22.31114
+  },
+  {
+    "number": 41,
+    "object": "ZADRUGNI DOM",
+    "address": "BOLJARE",
+    "registeredVoters": 545,
+    "latitude": 42.86241,
+    "longitude": 22.34518
+  },
+  {
+    "number": 42,
+    "object": "POSLOVNA PROSTORIJA MALIŠE RISTIĆA",
+    "address": "CRNATOVO",
+    "registeredVoters": 79,
+    "latitude": 42.88073,
+    "longitude": 22.35062
+  },
+  {
+    "number": 43,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "RAVNI DEL",
+    "registeredVoters": 153,
+    "latitude": 42.89518,
+    "longitude": 22.37047
+  },
+  {
+    "number": 44,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "ZLATIĆEVO",
+    "registeredVoters": 80,
+    "latitude": 42.91028,
+    "longitude": 22.38753
+  },
+  {
+    "number": 45,
+    "object": "MESNA ZAJEDNICA",
+    "address": "GORNJI DEJAN",
+    "registeredVoters": 64,
+    "latitude": 42.93683,
+    "longitude": 22.37691
+  },
+  {
+    "number": 46,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "DONJI DEJAN",
+    "registeredVoters": 0,
+    "latitude": 42.92142,
+    "longitude": 22.36782
+  },
+  {
+    "number": 47,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "BORIN DO",
+    "registeredVoters": 63,
+    "latitude": 42.91874,
+    "longitude": 22.41428
+  },
+  {
+    "number": 48,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "ALEKSINE",
+    "registeredVoters": 29,
+    "latitude": 42.93281,
+    "longitude": 22.42617
+  },
+  {
+    "number": 49,
+    "object": "OŠ \"DOSITEJ OBRADOVIĆ\"",
+    "address": "SVOĐE",
+    "registeredVoters": 210,
+    "latitude": 42.88436,
+    "longitude": 22.43328
+  },
+  {
+    "number": 50,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "DONJE GARE",
+    "registeredVoters": 60,
+    "latitude": 42.86462,
+    "longitude": 22.45473
+  },
+  {
+    "number": 51,
+    "object": "POSLOVNI PROSTOR PEŠIĆ NAJDANA",
+    "address": "RAJIĆEVO",
+    "registeredVoters": 79,
+    "latitude": 42.84637,
+    "longitude": 22.46294
+  },
+  {
+    "number": 52,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "JAKOVLJEVO",
+    "registeredVoters": 152,
+    "latitude": 42.82518,
+    "longitude": 22.47063
+  },
+  {
+    "number": 53,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "GORNJI ORAH",
+    "registeredVoters": 86,
+    "latitude": 42.80384,
+    "longitude": 22.45273
+  },
+  {
+    "number": 54,
+    "object": "MESNA ZAJEDNICA",
+    "address": "GORNJI ORAH",
+    "registeredVoters": 81,
+    "latitude": 42.80431,
+    "longitude": 22.45342
+  },
+  {
+    "number": 55,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "DOBROVIŠ",
+    "registeredVoters": 59,
+    "latitude": 42.78563,
+    "longitude": 22.43218
+  },
+  {
+    "number": 56,
+    "object": "OŠ \"BOŽIDAR MILJKOVIĆ\"",
+    "address": "GORNJI PRISJAN",
+    "registeredVoters": 76,
+    "latitude": 42.76581,
+    "longitude": 22.41437
+  },
+  {
+    "number": 57,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "DONJI PRISJAN",
+    "registeredVoters": 110,
+    "latitude": 42.77814,
+    "longitude": 22.40426
+  },
+  {
+    "number": 58,
+    "object": "OSNOVNA ŠKOLA",
+    "address": "KOMARICA",
+    "registeredVoters": 129,
+    "latitude": 42.75263,
+    "longitude": 22.39184
+  }
+]

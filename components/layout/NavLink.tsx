@@ -6,14 +6,21 @@ type NavLinkProps = {
   href: string;
   children: React.ReactNode;
   className?: string;
+  onNavigate?: () => void;
 };
 
-const NavLink = ({ href, children, className = "" }: NavLinkProps) => {
+const NavLink = ({
+  href,
+  children,
+  className = "",
+  onNavigate,
+}: NavLinkProps) => {
   const pathname = usePathname();
   const isActive = pathname === href;
   return (
     <Link
       href={href}
+      onClick={onNavigate}
       className={`text-sm font-medium uppercase cursor-pointer hover:text-primary ${isActive ? "text-primary" : ""} ${className}`}
     >
       {children}

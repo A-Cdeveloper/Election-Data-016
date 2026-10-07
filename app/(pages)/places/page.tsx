@@ -1,9 +1,10 @@
-const PlacesPage = () => {
-  return (
-    <div>
-      <h1>PlacesPage</h1>
-    </div>
-  );
-};
+import PlacesList from "@/features/places/components/PlacesList";
 
-export default PlacesPage;
+export default function PlacesPage() {
+  return (
+    <>
+      <h1 className="text-2xl font-bold uppercase mb-8">Biračka mesta</h1>
+      <PlacesList />
+    </>
+  );
+}

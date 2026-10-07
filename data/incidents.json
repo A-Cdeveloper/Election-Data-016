@@ -1,0 +1,242 @@
+[
+  {
+    "id": "01",
+    "name": "Glasanje bez ličnog dokumenta"
+  },
+  {
+    "id": "02",
+    "name": "Glasanje umesto drugog birača"
+  },
+  {
+    "id": "03",
+    "name": "Birač nije pronađen u biračkom spisku"
+  },
+  {
+    "id": "04",
+    "name": "Biraču upisanom u birački spisak nije dozvoljeno da glasa"
+  },
+  {
+    "id": "05",
+    "name": "Neproveravanje desnog kažiprsta UV lampom ili sprejom"
+  },
+  {
+    "id": "06",
+    "name": "Korišćenje telefona iza paravana"
+  },
+  {
+    "id": "07",
+    "name": "Fotografisanje glasačkog listića"
+  },
+  {
+    "id": "08",
+    "name": "Narušavanje tajnosti glasanja"
+  },
+  {
+    "id": "09",
+    "name": "Više osoba istovremeno iza paravana"
+  },
+  {
+    "id": "10",
+    "name": "Drugo lice utiče na izbor birača"
+  },
+  {
+    "id": "11",
+    "name": "Glasanje uz pomoć neovlašćenog lica"
+  },
+  {
+    "id": "12",
+    "name": "Neovlašćeno prisustvo trećeg lica na biračkom mestu"
+  },
+  {
+    "id": "13",
+    "name": "Neovlašćeno lice utiče na rad biračkog odbora"
+  },
+  {
+    "id": "14",
+    "name": "Paralelna evidencija birača"
+  },
+  {
+    "id": "15",
+    "name": "Član biračkog odbora vodi evidenciju izašlih birača mimo službene evidencije"
+  },
+  {
+    "id": "16",
+    "name": "Neovlašćeno fotografisanje ili snimanje na biračkom mestu"
+  },
+  {
+    "id": "17",
+    "name": "Unapred popunjen glasački listić"
+  },
+  {
+    "id": "18",
+    "name": "Iznošenje glasačkog listića sa biračkog mesta"
+  },
+  {
+    "id": "19",
+    "name": "Unošenje unapred popunjenog glasačkog listića"
+  },
+  {
+    "id": "20",
+    "name": "Sumnja na cirkularno glasanje (bugarski voz)"
+  },
+  {
+    "id": "21",
+    "name": "Kupovina glasova"
+  },
+  {
+    "id": "22",
+    "name": "Davanje novca ili druge koristi biraču"
+  },
+  {
+    "id": "23",
+    "name": "Organizovano dovođenje birača na glasanje"
+  },
+  {
+    "id": "24",
+    "name": "Praćenje birača nakon glasanja"
+  },
+  {
+    "id": "25",
+    "name": "Pritisak na birača"
+  },
+  {
+    "id": "26",
+    "name": "Pretnja biraču"
+  },
+  {
+    "id": "27",
+    "name": "Zastrašivanje birača"
+  },
+  {
+    "id": "28",
+    "name": "Pritisak na člana biračkog odbora"
+  },
+  {
+    "id": "29",
+    "name": "Pritisak ili zastrašivanje posmatrača"
+  },
+  {
+    "id": "30",
+    "name": "Fizički napad ili nasilje"
+  },
+  {
+    "id": "31",
+    "name": "Verbalni sukob ili pretnje"
+  },
+  {
+    "id": "32",
+    "name": "Ometanje rada biračkog mesta"
+  },
+  {
+    "id": "33",
+    "name": "Policija interveniše zbog incidenta"
+  },
+  {
+    "id": "34",
+    "name": "Izborna propaganda na biračkom mestu"
+  },
+  {
+    "id": "35",
+    "name": "Izborna propaganda u neposrednoj okolini biračkog mesta"
+  },
+  {
+    "id": "36",
+    "name": "Nagovaranje birača da glasaju za određenu listu ili kandidata"
+  },
+  {
+    "id": "37",
+    "name": "Stranačka obeležja ili promotivni materijal na nedozvoljenom mestu"
+  },
+  {
+    "id": "38",
+    "name": "Sumnjiva vozila ili organizovana aktivnost u okolini biračkog mesta"
+  },
+  {
+    "id": "39",
+    "name": "Biračko mesto nije otvoreno na vreme"
+  },
+  {
+    "id": "40",
+    "name": "Nedostatak izbornog materijala"
+  },
+  {
+    "id": "41",
+    "name": "Nepravilno rukovanje izbornim materijalom"
+  },
+  {
+    "id": "42",
+    "name": "Nepravilna provera identiteta birača"
+  },
+  {
+    "id": "43",
+    "name": "Nepravilnost pri potpisivanju biračkog spiska"
+  },
+  {
+    "id": "44",
+    "name": "Nepravilnost u radu biračkog odbora"
+  },
+  {
+    "id": "45",
+    "name": "Član biračkog odbora napušta biračko mesto"
+  },
+  {
+    "id": "46",
+    "name": "Birački odbor odbija da evidentira primedbu"
+  },
+  {
+    "id": "47",
+    "name": "Posmatraču nije omogućeno da unese primedbu u zapisnik"
+  },
+  {
+    "id": "48",
+    "name": "Posmatraču nije uručen primerak zapisnika"
+  },
+  {
+    "id": "49",
+    "name": "Nepravilnost pri zatvaranju biračkog mesta"
+  },
+  {
+    "id": "50",
+    "name": "Neovlašćeno lice prisustvuje brojanju glasova"
+  },
+  {
+    "id": "51",
+    "name": "Nepravilno utvrđivanje važećih i nevažećih glasačkih listića"
+  },
+  {
+    "id": "52",
+    "name": "Neslaganje u broju glasačkih listića"
+  },
+  {
+    "id": "53",
+    "name": "Sumnja na falsifikovanje rezultata"
+  },
+  {
+    "id": "54",
+    "name": "Nepravilnost u zapisniku o radu biračkog odbora"
+  },
+  {
+    "id": "55",
+    "name": "Odbijanje potpisivanja zapisnika"
+  },
+  {
+    "id": "56",
+    "name": "Odbijanje izdavanja kopije zapisnika"
+  },
+  {
+    "id": "57",
+    "name": "Sumnja na manipulaciju biračkim spiskom"
+  },
+  {
+    "id": "58",
+    "name": "Sumnja na organizovanu migraciju birača"
+  },
+  {
+    "id": "59",
+    "name": "Zloupotreba ličnih podataka birača"
+  },
+  {
+    "id": "60",
+    "name": "Druga izborna nepravilnost"
+  }
+]

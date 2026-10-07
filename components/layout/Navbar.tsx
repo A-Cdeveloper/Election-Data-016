@@ -1,11 +1,14 @@
 import NavLink from "./NavLink";
+import { navLinks } from "./nav-links";
 
 const Navbar = () => {
   return (
     <nav className="flex gap-8">
-      <NavLink href="/homepage">Home</NavLink>
-      <NavLink href="/places">Biračka mesta</NavLink>
-      <NavLink href="/reports">Izveštaj</NavLink>
+      {navLinks.map((link) => (
+        <NavLink key={link.href} href={link.href}>
+          {link.label}
+        </NavLink>
+      ))}
     </nav>
   );
 };
