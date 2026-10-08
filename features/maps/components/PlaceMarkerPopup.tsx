@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import type { PlaceWithMapRelations } from "@/features/places/types";
 import { getVotePercentageFormatted } from "@/features/places/utils/votePercent";
-import { formatTime } from "@/lib/format-date";
+import VotedCountShow from "@/features/places/components/VotedCountShow";
 
 type PlaceMarkerPopupProps = {
   place: PlaceWithMapRelations;
@@ -11,14 +11,9 @@ type PlaceMarkerPopupProps = {
 
 const PlaceMarkerPopup = ({ place }: PlaceMarkerPopupProps) => {
   const votedCount = place.currentPlaceStatus?.votedCount ?? 0;
-  const turnoutPercent = getVotePercentageFormatted(
-    votedCount,
-    place.registeredVoters
-  );
-  const statusUpdatedAt = place.currentPlaceStatus?.updatedAt;
 
   return (
-    <div className="min-w-[200px] space-y-0 text-sm">
+    <div className="min-w-[250px] space-y-0 text-sm">
       <div className="mb-1! flex items-center gap-4">
         <Badge
           variant="success"
@@ -33,13 +28,13 @@ const PlaceMarkerPopup = ({ place }: PlaceMarkerPopupProps) => {
         </div>
       </div>
 
-      <table className="mt-3 w-full border-t border-border text-xs">
+      <table className="mt-3 w-full border-t border-border text-sm">
         <tbody>
           <tr className="border-b">
             <th scope="row" className="py-1.5 pr-2 text-left font-medium">
               Broj upisanih
             </th>
-            <td className="py-1.5 text-right font-semibold text-sm">
+            <td className="py-1.5 text-right font-semibold text-lg">
               {place.registeredVoters}
             </td>
           </tr>
@@ -47,21 +42,14 @@ const PlaceMarkerPopup = ({ place }: PlaceMarkerPopupProps) => {
             <th scope="row" className="py-1.5 pr-2 text-left font-medium">
               Broj izašlih
             </th>
-            <td className="py-1.5 text-right text-sm font-bold text-green-700">
-              {votedCount}{" "}
-              <span className="font-normal text-sm text-gray-800">
-                ({turnoutPercent}%)
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" className="py-1.5 pr-2 text-left font-medium">
-              Poslednje ažuriranje
-            </th>
-            <td className="py-1.5 text-right text-sm">
-              {statusUpdatedAt
-                ? formatTime(statusUpdatedAt ?? new Date())
-                : "—"}
+            <td className="py-1.5 text-right">
+              <VotedCountShow
+                votedCount={votedCount}
+                turnoutPercent={Number(
+                  getVotePercentageFormatted(votedCount, place.registeredVoters)
+                )}
+                updatedAt={place.currentPlaceStatus?.updatedAt ?? new Date()}
+              />
             </td>
           </tr>
         </tbody>

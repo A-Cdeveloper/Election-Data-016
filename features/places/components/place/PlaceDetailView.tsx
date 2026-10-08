@@ -4,8 +4,8 @@ import PlaceHeader from "@/features/places/components/place/PlaceHeader";
 import PlaceMap from "@/features/places/components/place/PlaceMap";
 import PlaceTurnoutForm from "@/features/places/components/place/PlaceTurnoutForm";
 import type { PlaceWithDetailRelations } from "@/features/places/types";
-import { formatTime } from "@/lib/format-date";
 import { getVotePercentageFormatted } from "../../utils/votePercent";
+import VotedCountShow from "../VotedCountShow";
 
 type PlaceDetailViewProps = {
   place: PlaceWithDetailRelations;
@@ -13,7 +13,6 @@ type PlaceDetailViewProps = {
 
 const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
   const votedCount = place.currentPlaceStatus?.votedCount ?? 0;
-  const turnoutUpdatedAt = place.currentPlaceStatus?.updatedAt;
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4">
@@ -48,25 +47,20 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
                   className="bg-muted/30 px-4 py-3 text-left font-medium text-foreground"
                 >
                   Broj trenutno izašlih
-                  {turnoutUpdatedAt && (
-                    <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
-                      Poslednje ažuriranje:{" "}
-                      {formatTime(turnoutUpdatedAt ?? new Date())}
-                    </span>
-                  )}
                 </th>
                 <td className="px-4 py-3 text-right">
-                  <span className="font-medium tabular-nums text-lg text-green-600">
-                    {votedCount}{" "}
-                    <span className="text-sm font-normal">
-                      (
-                      {getVotePercentageFormatted(
+                  <VotedCountShow
+                    votedCount={votedCount}
+                    turnoutPercent={Number(
+                      getVotePercentageFormatted(
                         votedCount,
                         place.registeredVoters
-                      )}
-                      %)
-                    </span>
-                  </span>
+                      )
+                    )}
+                    updatedAt={
+                      place.currentPlaceStatus?.updatedAt ?? new Date()
+                    }
+                  />
                 </td>
               </tr>
               <tr>
@@ -74,6 +68,9 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
                   <PlaceTurnoutForm
                     placeNumber={place.number}
                     maxVoters={place.registeredVoters}
+                    currentVotedCount={
+                      place.currentPlaceStatus?.votedCount ?? 0
+                    }
                   />
                 </td>
               </tr>
