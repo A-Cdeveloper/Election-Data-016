@@ -2,12 +2,17 @@
 
 import "leaflet/dist/leaflet.css";
 import "react-leaflet-cluster/dist/assets/MarkerCluster.css";
+import type { Place } from "@prisma/client";
 import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
 
 import PlaceMarkers from "@/features/maps/components/PlaceMarkers";
 import { DEFAULT_MAP_ZOOM, VLASOTINCE_CENTER } from "@/features/maps/constants";
 
-const MapView = () => {
+type MapViewProps = {
+  places: Place[];
+};
+
+const MapView = ({ places }: MapViewProps) => {
   return (
     <div className="relative z-0 h-[calc(100dvh-4rem)] w-full overflow-hidden">
       <MapContainer
@@ -23,7 +28,7 @@ const MapView = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <PlaceMarkers />
+        <PlaceMarkers places={places} />
       </MapContainer>
     </div>
   );

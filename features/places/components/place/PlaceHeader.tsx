@@ -1,8 +1,8 @@
 import { Badge } from "@/components/ui/badge";
-import type { Place } from "../../types";
+import type { Place } from "@prisma/client";
 
 type PlaceHeaderProps = {
-  place: Place;
+  place: Pick<Place, "number" | "object" | "address">;
 };
 
 const PlaceHeader = ({ place }: PlaceHeaderProps) => {

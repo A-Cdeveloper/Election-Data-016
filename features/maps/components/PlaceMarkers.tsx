@@ -1,23 +1,24 @@
 "use client";
 
+import type { Place } from "@prisma/client";
 import Link from "next/link";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { Marker, Popup } from "react-leaflet";
 
 import { Badge } from "@/components/ui/badge";
 import { placeMarkerIcon } from "@/features/maps/lib/leaflet-icon";
-import { spreadMarkerPosition } from "@/features/maps/utils/spread-marker-position";
-import { getAllPlaces } from "@/features/places/api/get-place";
 
-const PlaceMarkers = () => {
-  const places = getAllPlaces();
+type PlaceMarkersProps = {
+  places: Place[];
+};
 
+const PlaceMarkers = ({ places }: PlaceMarkersProps) => {
   return (
     <MarkerClusterGroup chunkedLoading showCoverageOnHover={false}>
       {places.map((place) => (
         <Marker
           key={place.number}
-          position={spreadMarkerPosition(place, places)}
+          position={[place.latitude, place.longitude]}
           icon={placeMarkerIcon}
         >
           <Popup>

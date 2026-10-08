@@ -1,13 +1,16 @@
-import { getAllPlaces } from "@/features/places/api/get-place";
+import type { PlaceWithListRelations } from "@/features/places/types";
+
 import PlaceListItem from "./PlaceListItem";
 
-const PlacesList = () => {
-  const places = getAllPlaces();
+type PlacesListProps = {
+  places: PlaceWithListRelations[];
+};
 
+const PlacesList = ({ places }: PlacesListProps) => {
   return (
     <div className="flex flex-col gap-0">
       {places.map((place) => (
-        <PlaceListItem key={place.number} place={place} />
+        <PlaceListItem key={place.id} place={place} />
       ))}
     </div>
   );

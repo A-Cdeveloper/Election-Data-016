@@ -3,20 +3,18 @@ import IncidentsByPlace from "@/features/incidents/components/IncidentsByPlace";
 import PlaceHeader from "@/features/places/components/place/PlaceHeader";
 import PlaceMap from "@/features/places/components/place/PlaceMap";
 import PlaceTurnoutForm from "@/features/places/components/place/PlaceTurnoutForm";
-import type { Place } from "@/features/places/types";
+import type { PlaceWithDetailRelations } from "@/features/places/types";
 import { formatTime } from "@/lib/format-date";
-
-/** Placeholder until live turnout is wired up */
-const MOCK_TURNOUT = {
-  votedCount: 60,
-  updatedAt: "2026-10-07 10:00:00",
-};
+import { getVotePercentageFormatted } from "../../utils/votePercemt";
 
 type PlaceDetailViewProps = {
-  place: Place;
+  place: PlaceWithDetailRelations;
 };
 
 const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
+  const votedCount = place.currentPlaceStatus?.votedCount ?? 0;
+  const turnoutUpdatedAt = place.currentPlaceStatus?.updatedAt;
+
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4">
       <BackButton href="/places" label="Nazad na listu biračkih mesta" />
@@ -50,19 +48,22 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
                   className="bg-muted/30 px-4 py-3 text-left font-medium text-foreground"
                 >
                   Broj trenutno izašlih
-                  <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
-                    Poslednje ažuriranje: {formatTime(MOCK_TURNOUT.updatedAt)}
-                  </span>
+                  {turnoutUpdatedAt && (
+                    <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
+                      Poslednje ažuriranje:{" "}
+                      {formatTime(turnoutUpdatedAt.toISOString())}
+                    </span>
+                  )}
                 </th>
                 <td className="px-4 py-3 text-right">
-                  <span className="font-medium tabular-nums text-lg">
-                    {MOCK_TURNOUT.votedCount}{" "}
-                    <span className="text-xs font-normal text-muted-foreground">
+                  <span className="font-medium tabular-nums text-lg text-green-600 dark:text-green-500">
+                    {votedCount}{" "}
+                    <span className="text-sm font-normal">
                       (
-                      {(
-                        (MOCK_TURNOUT.votedCount / place.registeredVoters) *
-                        100
-                      ).toFixed(2)}
+                      {getVotePercentageFormatted(
+                        votedCount,
+                        place.registeredVoters
+                      )}
                       %)
                     </span>
                   </span>
@@ -83,7 +84,10 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
 
       <PlaceMap latitude={place.latitude} longitude={place.longitude} />
 
-      <IncidentsByPlace placeId={place.number.toString()} />
+      <IncidentsByPlace
+        placeNumber={place.number}
+        incidents={place.incidents}
+      />
     </div>
   );
 };
