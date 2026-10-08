@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 
 import PlaceDetailView from "@/features/places/components/place/PlaceDetailView";
-import { placeDetailInclude } from "@/features/places/types";
-import { prisma } from "@/lib/prisma";
+import { getPlaceByNumber } from "@/features/places/queries";
 
 type SinglePlacePageProps = {
   params: Promise<{ pid: string }>;
@@ -14,12 +13,7 @@ export default async function SinglePlacePage({
   const { pid } = await params;
   const placeNumber = Number(pid);
 
-  const place = await prisma.place.findUnique({
-    where: {
-      number: placeNumber,
-    },
-    include: placeDetailInclude,
-  });
+  const place = await getPlaceByNumber(placeNumber);
 
   if (!place) {
     notFound();

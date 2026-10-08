@@ -1,12 +1,8 @@
 import PlacesList from "@/features/places/components/PlacesList";
-import { placeListInclude } from "@/features/places/types";
-import { prisma } from "@/lib/prisma";
+import { getPlacesForList } from "@/features/places/queries";
 
 export default async function PlacesPage() {
-  const places = await prisma.place.findMany({
-    include: placeListInclude,
-    orderBy: { number: "asc" },
-  });
+  const places = await getPlacesForList();
   return (
     <>
       <h1 className="text-2xl font-bold uppercase mb-8">Biračka mesta</h1>

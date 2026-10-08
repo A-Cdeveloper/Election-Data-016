@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 type PlaceMapProps = {
   latitude: number;
   longitude: number;
+  number: number;
 };
 
 const SinglePlaceMap = dynamic(
@@ -20,11 +21,15 @@ const SinglePlaceMap = dynamic(
   }
 );
 
-const PlaceMap = ({ latitude, longitude }: PlaceMapProps) => {
+const PlaceMap = ({ latitude, longitude, number }: PlaceMapProps) => {
   return (
     <section aria-label="Lokacija biračkog mesta na mapi">
       <div className="h-[250px] overflow-hidden rounded-lg border border-border">
-        <SinglePlaceMap latitude={latitude} longitude={longitude} />
+        <SinglePlaceMap
+          latitude={latitude}
+          longitude={longitude}
+          number={number}
+        />
       </div>
     </section>
   );

@@ -42,7 +42,7 @@ const IncidentsByPlace = ({
           Dodaj incident
         </Button>
       </div>
-      <ul className="divide-y divide-border rounded-lg border border-border h-[300px] overflow-y-auto">
+      <ul className="divide-y rounded-lg border border-border h-[300px] overflow-y-auto">
         {incidents.length === 0 ? (
           <li className="px-4 py-8 text-center text-sm text-muted-foreground">
             Nema prijavljenih incidenata.
@@ -64,7 +64,7 @@ const IncidentsByPlace = ({
                   dateTime={incident.reportedAt.toISOString()}
                   className="shrink-0 text-xs tabular-nums text-muted-foreground"
                 >
-                  {formatTime(incident.reportedAt.toISOString())}
+                  {formatTime(incident.reportedAt ?? new Date())}
                 </time>
               </div>
             </li>

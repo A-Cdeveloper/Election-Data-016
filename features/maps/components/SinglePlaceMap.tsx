@@ -4,15 +4,21 @@ import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, TileLayer, ZoomControl } from "react-leaflet";
 
 import { PLACE_DETAIL_MAP_ZOOM } from "@/features/maps/constants";
-import { placeMarkerIcon } from "@/features/maps/lib/leaflet-icon";
+import { getPlaceMarkerIcon } from "@/features/maps/lib/leaflet-icon";
 
 type SinglePlaceMapProps = {
   latitude: number;
   longitude: number;
+  number: number;
 };
 
-const SinglePlaceMap = ({ latitude, longitude }: SinglePlaceMapProps) => {
+const SinglePlaceMap = ({
+  latitude,
+  longitude,
+  number,
+}: SinglePlaceMapProps) => {
   const position: [number, number] = [latitude, longitude];
+  const icon = getPlaceMarkerIcon(number);
 
   return (
     <MapContainer
@@ -28,7 +34,7 @@ const SinglePlaceMap = ({ latitude, longitude }: SinglePlaceMapProps) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={position} icon={placeMarkerIcon} />
+      <Marker position={position} icon={icon} />
     </MapContainer>
   );
 };

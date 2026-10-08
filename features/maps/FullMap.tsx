@@ -1,12 +1,8 @@
 import MapClient from "@/features/maps/MapClient";
-import { mapPlaceInclude } from "@/features/places/types";
-import { prisma } from "@/lib/prisma";
+import { getPlacesForMap } from "@/features/places/queries";
 
 const FullMap = async () => {
-  const places = await prisma.place.findMany({
-    include: mapPlaceInclude,
-    orderBy: { number: "asc" },
-  });
+  const places = await getPlacesForMap();
 
   return <MapClient places={places} />;
 };

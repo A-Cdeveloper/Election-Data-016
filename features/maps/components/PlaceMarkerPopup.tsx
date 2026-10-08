@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import type { PlaceWithMapRelations } from "@/features/places/types";
-import { getVotePercentageFormatted } from "@/features/places/utils/votePercemt";
+import { getVotePercentageFormatted } from "@/features/places/utils/votePercent";
 import { formatTime } from "@/lib/format-date";
 
 type PlaceMarkerPopupProps = {
@@ -47,7 +47,7 @@ const PlaceMarkerPopup = ({ place }: PlaceMarkerPopupProps) => {
             <th scope="row" className="py-1.5 pr-2 text-left font-medium">
               Broj izašlih
             </th>
-            <td className="py-1.5 text-right text-sm font-bold text-green-700 dark:text-green-500">
+            <td className="py-1.5 text-right text-sm font-bold text-green-700">
               {votedCount}{" "}
               <span className="font-normal text-sm text-gray-800">
                 ({turnoutPercent}%)

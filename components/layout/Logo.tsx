@@ -20,7 +20,7 @@ const APPLogo = ({
         width={width}
         height={height}
         className={className}
-        loading="eager"
+        loading="lazy"
       />
     </Link>
   );

@@ -5,7 +5,7 @@ import PlaceMap from "@/features/places/components/place/PlaceMap";
 import PlaceTurnoutForm from "@/features/places/components/place/PlaceTurnoutForm";
 import type { PlaceWithDetailRelations } from "@/features/places/types";
 import { formatTime } from "@/lib/format-date";
-import { getVotePercentageFormatted } from "../../utils/votePercemt";
+import { getVotePercentageFormatted } from "../../utils/votePercent";
 
 type PlaceDetailViewProps = {
   place: PlaceWithDetailRelations;
@@ -56,7 +56,7 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
                   )}
                 </th>
                 <td className="px-4 py-3 text-right">
-                  <span className="font-medium tabular-nums text-lg text-green-600 dark:text-green-500">
+                  <span className="font-medium tabular-nums text-lg text-green-600">
                     {votedCount}{" "}
                     <span className="text-sm font-normal">
                       (
@@ -82,7 +82,11 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
         </div>
       </section>
 
-      <PlaceMap latitude={place.latitude} longitude={place.longitude} />
+      <PlaceMap
+        latitude={place.latitude}
+        longitude={place.longitude}
+        number={place.number}
+      />
 
       <IncidentsByPlace
         placeNumber={place.number}
