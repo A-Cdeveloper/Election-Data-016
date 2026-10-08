@@ -7,7 +7,7 @@ type PlaceHeaderProps = {
 
 const PlaceHeader = ({ place }: PlaceHeaderProps) => {
   return (
-    <header className="space-y-2">
+    <header className="space-y-2 mb-8">
       <div className="flex flex-wrap items-center gap-3">
         <Badge
           variant="success"

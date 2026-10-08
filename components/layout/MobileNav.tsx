@@ -49,7 +49,7 @@ const MobileNav = () => {
 
       <div
         className={cn(
-          "absolute top-full right-0 z-50 mt-2 min-w-48 rounded-md border border-border bg-popover p-2 shadow-md",
+          "absolute top-full right-0 z-500000 mt-2 min-w-48 rounded-md border border-border bg-popover p-2 shadow-md",
           open ? "block" : "hidden"
         )}
       >
