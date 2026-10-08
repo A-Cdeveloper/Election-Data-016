@@ -10,6 +10,15 @@ export type PlaceWithListRelations = Prisma.PlaceGetPayload<{
   include: typeof placeListInclude;
 }>;
 
+/** Include za mapu (homepage) */
+export const mapPlaceInclude = {
+  currentPlaceStatus: true,
+} satisfies Prisma.PlaceInclude;
+
+export type PlaceWithMapRelations = Prisma.PlaceGetPayload<{
+  include: typeof mapPlaceInclude;
+}>;
+
 /** Include za stranicu detalja BM */
 export const placeDetailInclude = {
   incidents: {

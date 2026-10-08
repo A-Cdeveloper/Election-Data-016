@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import type { PlaceWithListRelations } from "@/features/places/types";
 import { getVotePercentageFormatted } from "../utils/votePercemt";
+import { formatTime } from "@/lib/format-date";
 
 type PlaceListItemProps = {
   place: PlaceWithListRelations;
@@ -28,15 +29,20 @@ const PlaceListItem = ({ place }: PlaceListItemProps) => {
         {place.object}
         <span className="text-[12px] text-gray-400 block">{place.address}</span>
       </div>
-      <div className="flex shrink-0 flex-col gap-0 text-right text-sm">
+      <div className="flex shrink-0 flex-col gap-0 text-right text-lg">
         <span className="font-bold tabular-nums text-lg">
           {place.registeredVoters}
         </span>
         <span className="font-bold text-lg tabular-nums text-green-600 dark:text-green-500">
           {votedCount}
           <span className="text-sm font-normal"> ({turnoutPercent}%)</span>
+          <span className="text-[12px] font-normal text-gray-400 block">
+            {" "}
+            - ažuriranje:{" "}
+            {formatTime(place.currentPlaceStatus?.updatedAt ?? new Date())}
+          </span>
         </span>
-        <span className="font-normal text-md text-red-600 dark:text-red-500">
+        <span className="font-normal text-sm text-red-600 dark:text-red-500">
           INC: <span className="font-bold">{incidentCount}</span>
         </span>
       </div>

@@ -2,14 +2,14 @@
 
 import "leaflet/dist/leaflet.css";
 import "react-leaflet-cluster/dist/assets/MarkerCluster.css";
-import type { Place } from "@prisma/client";
+import type { PlaceWithMapRelations } from "@/features/places/types";
 import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
 
 import PlaceMarkers from "@/features/maps/components/PlaceMarkers";
 import { DEFAULT_MAP_ZOOM, VLASOTINCE_CENTER } from "@/features/maps/constants";
 
 type MapViewProps = {
-  places: Place[];
+  places: PlaceWithMapRelations[];
 };
 
 const MapView = ({ places }: MapViewProps) => {

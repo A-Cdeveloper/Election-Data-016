@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-import type { Place } from "@prisma/client";
+import type { PlaceWithMapRelations } from "@/features/places/types";
 
 const MapView = dynamic(() => import("@/features/maps/MapView"), {
   ssr: false,
@@ -15,7 +15,7 @@ const MapView = dynamic(() => import("@/features/maps/MapView"), {
 });
 
 type MapClientProps = {
-  places: Place[];
+  places: PlaceWithMapRelations[];
 };
 
 const MapClient = ({ places }: MapClientProps) => {

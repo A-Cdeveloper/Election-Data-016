@@ -51,7 +51,7 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
                   {turnoutUpdatedAt && (
                     <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
                       Poslednje ažuriranje:{" "}
-                      {formatTime(turnoutUpdatedAt.toISOString())}
+                      {formatTime(turnoutUpdatedAt ?? new Date())}
                     </span>
                   )}
                 </th>
