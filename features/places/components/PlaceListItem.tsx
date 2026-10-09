@@ -23,7 +23,7 @@ const PlaceListItem = ({ place }: PlaceListItemProps) => {
       className="font-regular text-base hover:bg-accent px-3 py-3 cursor-pointer border-t border-gray-600  flex justify-between items-center"
     >
       <div className="flex flex-col w-[calc(100%-100px)]">
-        <Badge className="mb-1 rounded-xs font-bold bg-green-900 text-white">
+        <Badge className="mb-1 rounded-xs font-bold bg-green-900 text-white p-1.5">
           BM {place.number}
         </Badge>
         {place.object}

@@ -17,7 +17,7 @@ export const addIncidentAction = async (
   const placeNumber = Number(formData.get("placeNumber"));
 
   if (!incidentTypeCode || !Number.isInteger(placeNumber)) {
-    return { error: "Invalid incident type" };
+    return { error: "Neispravni podaci" };
   }
 
   try {
@@ -27,11 +27,11 @@ export const addIncidentAction = async (
     ]);
 
     if (!place) {
-      return { error: "Place not found" };
+      return { error: "Biračko mesto nije pronađeno" };
     }
 
     if (!incidentType) {
-      return { error: "Incident type not found" };
+      return { error: "Tip incidenta nije pronađen" };
     }
 
     await prisma.incident.create({
@@ -48,7 +48,7 @@ export const addIncidentAction = async (
     if (error instanceof Error) {
       return { error: error.message };
     }
-    return { error: "An unknown error occurred" };
+    return { error: "Došlo je do nepoznate greške" };
   }
-  return { success: "Incident added successfully" };
+  return { success: "Incident je uspešno dodat" };
 };

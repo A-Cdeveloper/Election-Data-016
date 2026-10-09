@@ -22,7 +22,7 @@ export const updatePlaceTurnoutAction = async (
 
   try {
     if (!votedCount || !placeNumber) {
-      return { error: "Invalid form data", success: false };
+      return { error: "Neispravni podaci", success: false };
     }
 
     const number = Number(placeNumber);
@@ -31,10 +31,10 @@ export const updatePlaceTurnoutAction = async (
       where: { number },
     });
     if (!place) {
-      return { error: "Place not found", success: false };
+      return { error: "Biračko mesto nije pronađeno", success: false };
     }
     if (!Number.isInteger(count) || count < 0) {
-      return { error: "Invalid form data", success: false };
+      return { error: "Neispravni podaci", success: false };
     }
     if (count > place.registeredVoters) {
       return {
@@ -62,6 +62,6 @@ export const updatePlaceTurnoutAction = async (
     if (error instanceof Error) {
       return { error: error.message, success: false };
     }
-    return { error: "An unknown error occurred", success: false };
+    return { error: "Došlo je do nepoznate greške", success: false };
   }
 };

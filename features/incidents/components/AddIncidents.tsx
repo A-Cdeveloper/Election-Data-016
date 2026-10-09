@@ -6,6 +6,7 @@ import { IncidentType } from "@prisma/client";
 import { Input } from "@/components/ui/input";
 import { addIncidentAction, IncidentActionResponse } from "../actions";
 import { useActionState } from "react";
+import { Loader2 } from "lucide-react";
 
 type AddIncidentsProps = {
   placeNumber: string;
@@ -18,7 +19,10 @@ const initialState: IncidentActionResponse = {
 };
 
 const AddIncidents = ({ placeNumber, types }: AddIncidentsProps) => {
-  const [state, formAction] = useActionState(addIncidentAction, initialState);
+  const [state, formAction, isPending] = useActionState(
+    addIncidentAction,
+    initialState
+  );
 
   return (
     <div>
@@ -30,7 +34,7 @@ const AddIncidents = ({ placeNumber, types }: AddIncidentsProps) => {
       </h2>
       <form
         action={formAction}
-        className="flex flex-col items-end gap-4 pb-8 mt-4"
+        className="flex flex-col items-end gap-4 pb-4 mt-4"
       >
         <Input type="hidden" name="placeNumber" value={placeNumber} />
         <NativeSelect defaultValue={types[0]?.code} name="incidentType">
@@ -43,26 +47,31 @@ const AddIncidents = ({ placeNumber, types }: AddIncidentsProps) => {
         <Textarea
           placeholder="Dodatne informacije o incidentu"
           name="description"
-          className="resize-none text-sm"
+          className="resize-none text-sm py-4 h-[100px]"
           defaultValue={""}
+          disabled={isPending}
+          aria-disabled={isPending}
         />
         <Button
           type="submit"
           variant="outline"
           size="sm"
-          className="min-w-[22%] shrink-0 self-end cursor-pointer"
+          className="min-w-[20%] shrink-0 self-end cursor-pointer py-4"
           data-place-number={placeNumber}
+          disabled={isPending}
         >
-          Dodaj incident
+          {isPending ? (
+            <Loader2 className="w-4 h-4 animate-spin" />
+          ) : (
+            "Dodaj incident"
+          )}
         </Button>
       </form>
       {state.error && (
-        <p className="mt-2 text-right text-sm text-red-500">{state.error}</p>
+        <p className="text-right text-xs text-red-500">{state.error}</p>
       )}
       {state.success && (
-        <p className="mt-2 text-right text-sm text-green-600">
-          {state.success}
-        </p>
+        <p className="text-right text-xs text-green-600">{state.success}</p>
       )}
     </div>
   );
