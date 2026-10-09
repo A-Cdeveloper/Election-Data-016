@@ -17,21 +17,24 @@ const PlaceMarkerPopup = ({ place }: PlaceMarkerPopupProps) => {
       <div className="mb-1! flex items-center gap-4">
         <Badge
           variant="success"
-          className="rounded-xs px-3 py-1 text-[14px] font-bold self-start"
+          className="rounded-xs px-3 py-1 text-[16px] font-bold self-start"
         >
           {place.number}
         </Badge>
         <div>
           <span className="font-semibold">{place.address}</span>
           <br />
-          {place.object && <p className="m-0! text-[12px]">{place.object}</p>}
+          {place.object && <p className="m-0! text-[14px]">{place.object}</p>}
         </div>
       </div>
 
       <table className="mt-3 w-full border-t border-border text-sm">
         <tbody>
           <tr className="border-b">
-            <th scope="row" className="py-1.5 pr-2 text-left font-medium">
+            <th
+              scope="row"
+              className="py-1.5 pr-2 text-left font-medium text-[13px]"
+            >
               Broj upisanih
             </th>
             <td className="py-1.5 text-right font-semibold text-lg">
@@ -39,7 +42,10 @@ const PlaceMarkerPopup = ({ place }: PlaceMarkerPopupProps) => {
             </td>
           </tr>
           <tr className="border-b">
-            <th scope="row" className="py-1.5 pr-2 text-left font-medium">
+            <th
+              scope="row"
+              className="py-1.5 pr-2 text-left font-medium text-[13px]"
+            >
               Broj izašlih
             </th>
             <td className="py-1.5 text-right">

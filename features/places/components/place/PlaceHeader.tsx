@@ -8,18 +8,17 @@ type PlaceHeaderProps = {
 const PlaceHeader = ({ place }: PlaceHeaderProps) => {
   return (
     <header className="space-y-2 mb-8">
-      <div className="flex flex-wrap items-center gap-3">
-        <Badge
-          variant="success"
-          className="rounded-xs text-[14px] font-bold p-2"
-        >
+      <div className="flex items-center gap-3">
+        <Badge variant="success" className="rounded-xs text-lg font-bold py-5">
           BM {place.number}
         </Badge>
         <h1 className="text-xl font-semibold uppercase leading-snug md:text-2xl">
           {place.object}
+          <span className="text-[12px] text-gray-400 block">
+            {place.address}
+          </span>
         </h1>
       </div>
-      <p className="text-sm text-muted-foreground">{place.address}</p>
     </header>
   );
 };

@@ -14,7 +14,6 @@ export const getPlacesForList = () =>
 export const getPlacesForSelect = cache(async () => {
   const places = await prisma.place.findMany({
     include: placeListInclude,
-    orderBy: { number: "asc" },
   });
   return places.map((place) => ({
     value: place.number,
@@ -28,6 +27,11 @@ export const getPlacesForMap = () =>
     orderBy: { number: "asc" },
   });
 
-export const getPlaceByNumber = cache((number: number) =>
-  prisma.place.findUnique({ where: { number }, include: placeDetailInclude })
-);
+export const getPlaceByNumber = cache(async (number: number) => {
+  if (!Number.isInteger(number)) return null;
+
+  return prisma.place.findUnique({
+    where: { number },
+    include: placeDetailInclude,
+  });
+});

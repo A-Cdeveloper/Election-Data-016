@@ -13,6 +13,10 @@ export default async function SinglePlacePage({
   const { pid } = await params;
   const placeNumber = Number(pid);
 
+  if (!Number.isInteger(placeNumber)) {
+    notFound();
+  }
+
   const place = await getPlaceByNumber(placeNumber);
 
   if (!place) {

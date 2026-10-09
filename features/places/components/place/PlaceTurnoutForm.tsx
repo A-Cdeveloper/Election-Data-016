@@ -41,7 +41,7 @@ const PlaceTurnoutForm = ({
           // max={maxVoters}
           placeholder="0"
           defaultValue={currentVotedCount}
-          className="max-w-32 flex-1"
+          className="max-w-24 flex-1"
           aria-label="Broj trenutno izašlih"
           aria-required="true"
         />

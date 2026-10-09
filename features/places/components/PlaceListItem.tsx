@@ -38,8 +38,8 @@ const PlaceListItem = ({ place }: PlaceListItemProps) => {
           turnoutPercent={Number(turnoutPercent)}
           updatedAt={place.currentPlaceStatus?.updatedAt ?? new Date()}
         />
-        <span className="font-normal text-sm text-red-600">
-          INC: <span className="font-bold">{incidentCount}</span>
+        <span className="font-normal text-sm">
+          INC: <span className="font-bold text-red-600">{incidentCount}</span>
         </span>
       </div>
     </Link>

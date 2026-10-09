@@ -8,7 +8,7 @@ type PlacesListProps = {
 
 const PlacesList = ({ places }: PlacesListProps) => {
   return (
-    <div className="flex flex-col gap-0">
+    <div className="flex flex-col">
       {places.map((place) => (
         <PlaceListItem key={place.id} place={place} />
       ))}

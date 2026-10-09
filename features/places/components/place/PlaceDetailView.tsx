@@ -27,28 +27,28 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
         >
           Izborna aktivnost
         </h2>
-        <div className="overflow-hidden rounded-lg border border-border">
+        <div className="overflow-hidden border-y last:border-b-0 border-border">
           <table className="w-full text-sm">
             <tbody>
               <tr className="border-b border-border">
                 <th
                   scope="row"
-                  className="bg-muted/30 px-4 py-3 text-left font-medium text-foreground"
+                  className="bg-muted/30 px-4 py-2 text-left font-medium text-foreground"
                 >
                   Broj upisanih birača
                 </th>
-                <td className="px-4 py-3 text-right font-semibold tabular-nums text-lg">
+                <td className="px-4 py-2 text-right font-semibold tabular-nums text-lg">
                   {place.registeredVoters}
                 </td>
               </tr>
               <tr className="border-b border-border">
                 <th
                   scope="row"
-                  className="bg-muted/30 px-4 py-3 text-left font-medium text-foreground"
+                  className="bg-muted/30 px-4 py-2 text-left font-medium text-foreground"
                 >
                   Broj trenutno izašlih
                 </th>
-                <td className="px-4 py-3 text-right">
+                <td className="px-4 py-2 text-right">
                   <VotedCountShow
                     votedCount={votedCount}
                     turnoutPercent={Number(
