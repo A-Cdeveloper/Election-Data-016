@@ -9,6 +9,7 @@ type CustomInputProps = React.ComponentProps<"input"> & {
   "aria-required"?: boolean | "true" | "false";
   "aria-invalid"?: boolean | "true" | "false";
   "aria-describedby"?: string;
+  type?: "text" | "email" | "password";
 };
 
 const CustomInput = ({
@@ -19,6 +20,7 @@ const CustomInput = ({
   "aria-required": ariaRequired,
   "aria-invalid": ariaInvalid,
   "aria-describedby": ariaDescribedBy,
+  type = "text",
   ...props
 }: CustomInputProps) => {
   return (
@@ -37,6 +39,7 @@ const CustomInput = ({
         aria-required={ariaRequired}
         aria-invalid={ariaInvalid}
         aria-describedby={ariaDescribedBy}
+        type={type}
         {...props}
       />
     </div>

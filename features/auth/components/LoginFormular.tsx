@@ -1,11 +1,35 @@
+"use client";
 import CustomInput from "@/components/custom/CustomInput";
 import { Button } from "@/components/ui/button";
+import { useActionState } from "react";
+import { loginAction } from "../actions/login";
+
+import { LoginActionResponseType } from "../types";
+
+const initialState: LoginActionResponseType = {
+  success: false,
+  error: [],
+  message: "",
+};
 
 const LoginFormular = () => {
+  const [state, formAction] = useActionState(loginAction, initialState);
+
   return (
-    <form className="flex flex-col gap-4 w-full max-w-md">
-      <CustomInput id="email" name="email" placeholder="Email" />
-      <CustomInput id="password" name="password" placeholder="Password" />
+    <form action={formAction} className="flex flex-col gap-4 w-xs">
+      <CustomInput
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Email"
+        defaultValue={state.email ?? ""}
+      />
+      <CustomInput
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Password"
+      />
       <Button
         type="submit"
         variant="default"
@@ -13,6 +37,13 @@ const LoginFormular = () => {
       >
         Login
       </Button>
+      {state?.error && (
+        <span className="whitespace-pre-wrap text-sm text-red-500">
+          {state.error.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </span>
+      )}
     </form>
   );
 };
