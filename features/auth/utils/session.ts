@@ -1,4 +1,5 @@
 import { jwtDecrypt, EncryptJWT } from "jose";
+import { cookies } from "next/headers";
 
 const secret = process.env.AUTH_SECRET;
 
@@ -31,4 +32,13 @@ export const decryptSession = async (token: string) => {
   } catch {
     return null;
   }
+};
+
+export const getSession = async () => {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("auth_session")?.value;
+  if (!token) {
+    return null;
+  }
+  return decryptSession(token);
 };

@@ -4,3 +4,9 @@ export type LoginActionResponseType = {
   error?: string[];
   email?: string;
 };
+
+export type LogoutActionResponseType = {
+  success: boolean;
+  message?: string;
+  error?: string[];
+};
