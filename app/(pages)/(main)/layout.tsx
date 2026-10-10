@@ -1,9 +1,9 @@
-import AppShellWithSidebar from "@/components/layout/AppShellWithSidebar";
+import AppShellFullWidth from "@/components/layout/AppShellFullWidth";
 
 export default function MainPagesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <AppShellWithSidebar>{children}</AppShellWithSidebar>;
+  return <AppShellFullWidth>{children}</AppShellFullWidth>;
 }

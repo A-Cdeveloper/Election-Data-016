@@ -69,19 +69,14 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
                   />
                 </td>
               </tr>
-              <tr>
-                <td colSpan={2} className="bg-muted/10 px-4 py-3">
-                  <PlaceTurnoutForm
-                    placeNumber={place.number}
-                    maxVoters={place.registeredVoters}
-                    currentVotedCount={
-                      place.currentPlaceStatus?.votedCount ?? 0
-                    }
-                  />
-                </td>
-              </tr>
             </tbody>
           </table>
+
+          <PlaceTurnoutForm
+            placeNumber={place.number}
+            maxVoters={place.registeredVoters}
+            currentVotedCount={place.currentPlaceStatus?.votedCount ?? 0}
+          />
         </div>
       </section>
 

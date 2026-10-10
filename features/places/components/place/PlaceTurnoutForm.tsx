@@ -32,7 +32,10 @@ const PlaceTurnoutForm = ({
 
   return (
     <>
-      <form action={formAction} className="flex items-center justify-end gap-2">
+      <form
+        action={formAction}
+        className="flex items-center justify-end gap-2 mt-2 p-4 bg-muted w-full"
+      >
         <Input
           id={`turnout-${placeNumber}`}
           name="votedCount"

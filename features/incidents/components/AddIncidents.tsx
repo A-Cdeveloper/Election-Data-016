@@ -1,6 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { NativeSelect } from "@/components/ui/native-select";
+import {
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 import { Textarea } from "@/components/ui/textarea";
 import { IncidentType } from "@prisma/client";
 import { Input } from "@/components/ui/input";
@@ -25,7 +28,7 @@ const AddIncidents = ({ placeNumber, types }: AddIncidentsProps) => {
   );
 
   return (
-    <div className="my-8">
+    <div className="my-8 bg-muted p-4">
       <h2
         id="incidents-heading"
         className="text-md font-semibold uppercase tracking-wide text-muted-foreground"
@@ -37,15 +40,23 @@ const AddIncidents = ({ placeNumber, types }: AddIncidentsProps) => {
         className="flex flex-col items-end gap-4 pb-4 mt-4"
       >
         <Input type="hidden" name="placeNumber" value={placeNumber} />
-        <NativeSelect defaultValue={types[0]?.code} name="incidentType">
+
+        <NativeSelect name="incidentType" defaultValue="">
+          <NativeSelectOption value="">
+            Izaberite tip incidenta
+          </NativeSelectOption>
           {types.map((incidentType) => (
-            <option key={incidentType.code} value={incidentType.code}>
+            <NativeSelectOption
+              key={incidentType.code}
+              value={incidentType.code}
+              className="bg-background block py-3"
+            >
               {incidentType.code} - {incidentType.name}
-            </option>
+            </NativeSelectOption>
           ))}
         </NativeSelect>
         <Textarea
-          placeholder="Dodatne informacije o incidentu"
+          placeholder="Dodatne informacije o incidentu (opciono)"
           name="description"
           className="resize-none text-sm py-4 h-[100px]"
           defaultValue={""}

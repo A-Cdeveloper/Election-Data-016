@@ -58,6 +58,10 @@ export const updatePlaceTurnoutAction = async (
       create: { placeId: place.id, votedCount: count },
     });
 
+    await prisma.turnoutRecord.create({
+      data: { placeId: place.id, votedCount: count },
+    });
+
     revalidatePath(`/places/${place.number}`);
 
     return {

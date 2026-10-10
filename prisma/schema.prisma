@@ -23,6 +23,7 @@ model Place {
   longitude            Float
   incidents            Incident[]
   currentPlaceStatus   CurrentPlaceStatus?
+  turnoutRecords       TurnoutRecord[]
 
   @@map("places")
 }
@@ -37,6 +38,18 @@ model CurrentPlaceStatus {
   createdAt  DateTime @default(now()) @map("created_at")
 
   @@map("current_place_statuses")
+}
+
+/// Istorijski unos trenutne izlaznosti na biračkom mestu
+model TurnoutRecord {
+  id         Int      @id @default(autoincrement())
+  placeId    Int      @map("place_id")
+  place      Place    @relation(fields: [placeId], references: [id], onDelete: Cascade)
+  votedCount Int      @map("voted_count")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@index([placeId, createdAt])
+  @@map("turnout_records")
 }
 
 
