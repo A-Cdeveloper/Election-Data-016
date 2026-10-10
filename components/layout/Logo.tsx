@@ -7,18 +7,16 @@ type APPLogoProps = {
   className?: string;
 };
 
-const APPLogo = ({
-  width = 250,
-  height = 250,
-  className = "",
-}: APPLogoProps) => {
+const APPLogo = ({ width = 250, height, className = "" }: APPLogoProps) => {
+  const imageHeight = height ?? Math.round((width * 725) / 2170);
+
   return (
     <Link href="/">
       <Image
         src="/ED016.png"
         alt="ElectionData logo"
         width={width}
-        height={height}
+        height={imageHeight}
         className={className}
         loading="lazy"
       />

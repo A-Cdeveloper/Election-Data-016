@@ -51,15 +51,31 @@ export const updatePlaceTurnoutAction = async (
         success: false,
       };
     }
-
+    // Update current place status
     await prisma.currentPlaceStatus.upsert({
       where: { placeId: place.id },
       update: { votedCount: count },
       create: { placeId: place.id, votedCount: count },
     });
 
-    await prisma.turnoutRecord.create({
-      data: { placeId: place.id, votedCount: count },
+    // Update turnout record
+    const recordedAt = new Date();
+    recordedAt.setMinutes(0, 0, 0);
+    await prisma.turnoutRecord.upsert({
+      where: {
+        placeId_recordedAt: {
+          placeId: place.id,
+          recordedAt,
+        },
+      },
+      update: {
+        votedCount: count,
+      },
+      create: {
+        placeId: place.id,
+        votedCount: count,
+        recordedAt,
+      },
     });
 
     revalidatePath(`/places/${place.number}`);

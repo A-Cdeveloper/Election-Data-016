@@ -18,12 +18,6 @@ const IncidentsList = ({ incidents }: IncidentsListProps) => {
 
   return (
     <div className="my-4">
-      <h2
-        id="incidents-heading"
-        className="text-md font-semibold uppercase tracking-wide text-muted-foreground mb-4"
-      >
-        Incidenti - {incidents.length}
-      </h2>
       <ul className="divide-y border border-border h-[300px] overflow-y-auto">
         {incidents.map((incident) => (
           <li key={incident.id} className="py-4 w-[95%] mx-auto">

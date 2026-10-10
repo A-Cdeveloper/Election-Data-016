@@ -6,13 +6,20 @@ import PlaceTurnoutForm from "@/features/places/components/place/PlaceTurnoutFor
 import type { PlaceWithDetailRelations } from "@/features/places/types";
 import { getVotePercentageFormatted } from "../../utils/votePercent";
 import VotedCountShow from "../VotedCountShow";
+import TournOutGrapfByPlace from "@/features/reports/components/TournOutGrapfByPlace";
+import {
+  getIncidentChartDataByPlaceId,
+  getTurnoutChartDataByPlaceId,
+} from "@/features/reports/queries";
 
 type PlaceDetailViewProps = {
   place: PlaceWithDetailRelations;
 };
 
-const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
+const PlaceDetailView = async ({ place }: PlaceDetailViewProps) => {
   const votedCount = place.currentPlaceStatus?.votedCount ?? 0;
+  const records = await getTurnoutChartDataByPlaceId(place.id);
+  const incidentChartData = await getIncidentChartDataByPlaceId(place.id);
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4">
@@ -47,13 +54,15 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
                   {place.registeredVoters}
                 </td>
               </tr>
-              <tr className="border-b border-border">
+
+              <tr className="border-y border-border">
                 <th
                   scope="row"
                   className="bg-muted/30 px-4 py-2 text-left font-medium text-foreground"
                 >
                   Broj trenutno izašlih
                 </th>
+
                 <td className="px-4 py-2 text-right">
                   <VotedCountShow
                     votedCount={votedCount}
@@ -69,6 +78,17 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
                   />
                 </td>
               </tr>
+
+              {records.length > 0 && (
+                <tr>
+                  <td colSpan={2}>
+                    <TournOutGrapfByPlace
+                      records={records}
+                      maxVoters={place.registeredVoters}
+                    />
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
 
@@ -81,6 +101,7 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
       </section>
 
       <IncidentsByPlace
+        incidentChartData={incidentChartData}
         placeNumber={place.number}
         incidents={place.incidents}
       />

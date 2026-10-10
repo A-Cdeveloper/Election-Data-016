@@ -46,7 +46,10 @@ model TurnoutRecord {
   placeId    Int      @map("place_id")
   place      Place    @relation(fields: [placeId], references: [id], onDelete: Cascade)
   votedCount Int      @map("voted_count")
+  recordedAt DateTime @map("recorded_at")
   createdAt  DateTime @default(now()) @map("created_at")
+
+  @@unique([placeId, recordedAt])
 
   @@index([placeId, createdAt])
   @@map("turnout_records")
