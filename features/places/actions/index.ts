@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 
 import { prisma } from "@/lib/prisma";
+import { getCurrentUser } from "@/features/auth/utils/auth";
 
 export type UpdatePlaceTurnoutActionResponse = {
   error?: string;
@@ -17,6 +18,14 @@ export const updatePlaceTurnoutAction = async (
   _previousState: UpdatePlaceTurnoutActionResponse,
   formData: FormData
 ): Promise<UpdatePlaceTurnoutActionResponse> => {
+  const user = await getCurrentUser();
+  if (!user) {
+    return {
+      error: "Nemate dozvolu da ažurirate izlazne brojeve",
+      success: false,
+    };
+  }
+
   const votedCount = formData.get("votedCount");
   const placeNumber = formData.get("placeNumber");
 

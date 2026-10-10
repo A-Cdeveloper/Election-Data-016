@@ -24,12 +24,11 @@ const IncidentsByPlace = async ({
 
   return (
     <section aria-labelledby="incidents-heading">
+      <IncidentsList incidents={incidents} />
       <AddIncidents
         placeNumber={placeNumber.toString()}
         types={incidentTypes}
       />
-
-      <IncidentsList incidents={incidents} />
     </section>
   );
 };

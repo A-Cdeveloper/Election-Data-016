@@ -17,7 +17,7 @@ const IncidentsList = ({ incidents }: IncidentsListProps) => {
   }
 
   return (
-    <div className="mt-4">
+    <div className="my-4">
       <h2
         id="incidents-heading"
         className="text-md font-semibold uppercase tracking-wide text-muted-foreground mb-4"

@@ -1,15 +1,9 @@
 import UserInfo from "./UserInfo";
 import Logout from "./Logout";
-import { getSession } from "@/features/auth/utils/session";
-import { findUserById } from "@/features/auth/queries";
+import { getCurrentUser } from "@/features/auth/utils/auth";
 const UserArea = async () => {
-  const session = await getSession();
-  if (!session) {
-    return null;
-  }
-  const user = await findUserById(session.userId);
+  const user = await getCurrentUser();
 
-  console.log(user);
   if (!user) {
     return null;
   }

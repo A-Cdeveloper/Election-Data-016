@@ -1,10 +1,11 @@
 "use client";
 import CustomInput from "@/components/custom/CustomInput";
 import { Button } from "@/components/ui/button";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { loginAction } from "../actions/login";
 
 import { LoginActionResponseType } from "../types";
+import { redirect } from "next/navigation";
 
 const initialState: LoginActionResponseType = {
   success: false,
@@ -14,6 +15,12 @@ const initialState: LoginActionResponseType = {
 
 const LoginFormular = () => {
   const [state, formAction] = useActionState(loginAction, initialState);
+
+  useEffect(() => {
+    if (state.success) {
+      redirect("/homepage");
+    }
+  }, [state.success]);
 
   return (
     <form action={formAction} className="flex flex-col gap-4 w-xs">

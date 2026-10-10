@@ -1,5 +1,6 @@
 "use server";
 
+import { getCurrentUser } from "@/features/auth/utils/auth";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
@@ -9,9 +10,14 @@ export type IncidentActionResponse = {
 };
 
 export const addIncidentAction = async (
-  prevState: IncidentActionResponse,
+  _prevState: IncidentActionResponse,
   formData: FormData
 ) => {
+  const user = await getCurrentUser();
+  if (!user) {
+    return { error: "Nemate dozvolu da dodate incident" };
+  }
+
   const incidentTypeCode = formData.get("incidentType")?.toString().trim();
   const description = formData.get("description")?.toString().trim() ?? "";
   const placeNumber = Number(formData.get("placeNumber"));

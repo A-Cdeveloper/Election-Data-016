@@ -20,10 +20,16 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
 
       <PlaceHeader place={place} />
 
+      <PlaceMap
+        latitude={place.latitude}
+        longitude={place.longitude}
+        number={place.number}
+      />
+
       <section aria-labelledby="turnout-heading">
         <h2
           id="turnout-heading"
-          className="mb-3 text-md font-semibold uppercase tracking-wide text-muted-foreground"
+          className="my-4 text-md font-semibold uppercase tracking-wide text-muted-foreground"
         >
           Izborna aktivnost
         </h2>
@@ -78,12 +84,6 @@ const PlaceDetailView = ({ place }: PlaceDetailViewProps) => {
           </table>
         </div>
       </section>
-
-      <PlaceMap
-        latitude={place.latitude}
-        longitude={place.longitude}
-        number={place.number}
-      />
 
       <IncidentsByPlace
         placeNumber={place.number}

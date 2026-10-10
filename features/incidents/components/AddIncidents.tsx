@@ -25,7 +25,7 @@ const AddIncidents = ({ placeNumber, types }: AddIncidentsProps) => {
   );
 
   return (
-    <div>
+    <div className="my-8">
       <h2
         id="incidents-heading"
         className="text-md font-semibold uppercase tracking-wide text-muted-foreground"

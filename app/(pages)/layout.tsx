@@ -1,7 +1,14 @@
-export default function PagesLayout({
+import { getCurrentUser } from "@/features/auth/utils/auth";
+import { redirect } from "next/navigation";
+
+export default async function PagesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children;
+  const user = await getCurrentUser();
+  if (!user) {
+    redirect("/");
+  }
+  return <>{children}</>;
 }

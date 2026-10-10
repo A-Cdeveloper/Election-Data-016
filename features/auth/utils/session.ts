@@ -1,5 +1,6 @@
 import { jwtDecrypt, EncryptJWT } from "jose";
 import { cookies } from "next/headers";
+import "server-only";
 
 const secret = process.env.AUTH_SECRET;
 
